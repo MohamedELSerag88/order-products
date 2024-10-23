@@ -1,0 +1,177 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Jawher AL Mina API",
+        "description": "King salaman project help you to manage all your projects and see all process and staging of the project:\n *      with timestampe images and 360 taken every day for the project .\n *     you can access our website throught admin or our clients invetations .",
+        "version": "1.0"
+    },
+    "paths": {
+        "/v1/Login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Login Api",
+                "operationId": "7bfd850ac7f7271fa0065cd1a24acf9b",
+                "requestBody": {
+                    "description": "Request Body",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "title": "email",
+                                        "description": "Email",
+                                        "type": "string",
+                                        "example": "mohamedelserag4488@gmail.com"
+                                    },
+                                    "password": {
+                                        "title": "password",
+                                        "description": "Password",
+                                        "type": "string",
+                                        "example": "123456"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success message",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "description": "Meta Data",
+                                            "properties": {
+                                                "status": {
+                                                    "description": "Response Status",
+                                                    "type": "string",
+                                                    "example": "OK"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "response": {
+                                            "description": "Data and messages Response",
+                                            "properties": {
+                                                "status": {
+                                                    "description": "Response Status",
+                                                    "type": "string",
+                                                    "example": "OK"
+                                                },
+                                                "data": {
+                                                    "description": "User Object and jwt token",
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "register",
+                "operationId": "dc7d879beca8ee5855009e42ffe22865",
+                "requestBody": {
+                    "description": "Request Body",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "title": "fname",
+                                        "description": "First name",
+                                        "type": "string",
+                                        "example": "abcd"
+                                    },
+                                    "email": {
+                                        "title": "email",
+                                        "description": "Email",
+                                        "type": "string",
+                                        "example": "email@email.com"
+                                    },
+                                    "password": {
+                                        "title": "password",
+                                        "description": "Password",
+                                        "type": "string",
+                                        "example": "123456"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success message",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "description": "Meta Data",
+                                            "properties": {
+                                                "status": {
+                                                    "description": "Response Status",
+                                                    "type": "string",
+                                                    "example": "OK"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "response": {
+                                            "description": "Data and messages Response",
+                                            "properties": {
+                                                "status": {
+                                                    "description": "Response Status",
+                                                    "type": "string",
+                                                    "example": "OK"
+                                                },
+                                                "data": {
+                                                    "description": "User Object and jwt token",
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "Authorization": {
+                "type": "http",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Auth",
+            "description": "Auth"
+        }
+    ]
+}
