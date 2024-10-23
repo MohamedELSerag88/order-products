@@ -22,7 +22,7 @@ Route::group([
     Route::post('login', 'Auth\AuthController@login');
     Route::post('register', 'Auth\AuthController@register');
     Route::group([
-        'middleware' => 'auth'
+        'middleware' => 'auth:sanctum'
     ], function ($router) {
         Route::apiResource("products", "Product\ProductController")->only(["index","store","update"]);
         Route::apiResource("orders", "Order\OrderController")->only(["index","store","show"]);

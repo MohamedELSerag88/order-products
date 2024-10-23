@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Http\Resources\Auth\LoginResource;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends Controller {
@@ -85,10 +86,13 @@ class AuthController extends Controller {
     public function login(LoginRequest $request)
     {
         $credentials = $request->only(['email', 'password']);
-        if (! $token = JWTAuth::attempt($credentials)) {
+        $user = User::where('email', $credentials['email'])->first();
+
+        if (!$user || !\Hash::check($credentials["password"], $user->password)) {
             return $this->response->statusFail("Invalid credentials");
         }
-        $user = auth()->user();
+        $tokenResult = $user->createToken('Personal Access Token');
+        $token = $tokenResult->plainTextToken;
         $user->token = $token;
         $data = ['data' => new LoginResource($user)];
         return $this->response->statusOk($data);
@@ -176,7 +180,8 @@ class AuthController extends Controller {
         $data = $request->validated();
         $data['password'] = \Hash::make($data['password']);
         $user = User::create($data);
-        $token = JWTAuth::fromUser($user);
+        $tokenResult = $user->createToken('Personal Access Token');
+        $token = $tokenResult->plainTextToken;
         $user->token = $token;
         return $this->response->statusOk(["data" => new LoginResource($user)]);
     }

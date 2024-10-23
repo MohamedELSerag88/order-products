@@ -98,7 +98,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Mon, 14 Oct 2024 21:53:48 GMT"
+									"value": "Wed, 23 Oct 2024 19:43:14 GMT"
 								},
 								{
 									"key": "Server",
@@ -118,7 +118,7 @@
 								},
 								{
 									"key": "X-RateLimit-Remaining",
-									"value": "58"
+									"value": "59"
 								},
 								{
 									"key": "Access-Control-Allow-Origin",
@@ -142,7 +142,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"response\": {\n        \"status\": \"OK\",\n        \"data\": {\n            \"name\": \"User\",\n            \"email\": \"user@order.com\",\n            \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vb3JkZXIubG9jYWwvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzI4OTQyODI4LCJleHAiOjE3Mjg5NDY0MjgsIm5iZiI6MTcyODk0MjgyOCwianRpIjoiVk5SYWRXRlZsQ3pYTU95MiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.I8Y7pQ_Daua6QW27LM9KuOKzZv4A9iWQldydkvLQK3E\"\n        }\n    }\n}"
+							"body": "{\n    \"response\": {\n        \"status\": \"OK\",\n        \"data\": {\n            \"name\": \"User\",\n            \"email\": \"user@order.com\",\n            \"token\": \"1|xEOsqf2yUUXwXXvAr5mbYRbGgtQizA4DgaYcWNcCab446da9\"\n        }\n    }\n}"
 						}
 					]
 				},
@@ -210,7 +210,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\":\"Mohamed\",\r\n    \"email\" : \"mohamedelserag48@hotmail.com\",\r\n    \"password\" : \"123456\"\r\n}",
+									"raw": "{\r\n    \"name\":\"Mohamed\",\r\n    \"email\" : \"mohamed@order.com\",\r\n    \"password\" : \"123456\",\r\n    \"password_confirmation\":\"123456\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -234,7 +234,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Mon, 14 Oct 2024 21:54:34 GMT"
+									"value": "Wed, 23 Oct 2024 19:45:01 GMT"
 								},
 								{
 									"key": "Server",
@@ -278,7 +278,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"response\": {\n        \"status\": \"OK\",\n        \"data\": {\n            \"name\": \"Mohamed\",\n            \"email\": \"mohamedelserag48@hotmail.com\",\n            \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vb3JkZXIubG9jYWwvYXBpL3YxL3JlZ2lzdGVyIiwiaWF0IjoxNzI4OTQyODc0LCJleHAiOjE3Mjg5NDY0NzQsIm5iZiI6MTcyODk0Mjg3NCwianRpIjoiQml3RDJydnhPQkt4bVNDciIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ybADzu6MAhp8h1hhBHqajrx3v5wCaAzHxHM-jI5Aycs\"\n        }\n    }\n}"
+							"body": "{\n    \"response\": {\n        \"status\": \"OK\",\n        \"data\": {\n            \"name\": \"Mohamed\",\n            \"email\": \"mohamed@order.com\",\n            \"token\": \"2|Q1FtcvhSw9IJVqbAeli7Ho4ANhvWQ4zvzMsba8P114655007\"\n        }\n    }\n}"
 						}
 					]
 				}
