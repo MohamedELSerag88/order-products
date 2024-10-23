@@ -1,0 +1,1205 @@
+{
+	"info": {
+		"_postman_id": "61cb0f37-7e50-48f6-af1f-1a5f02608bc7",
+		"name": "Order System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1732434",
+		"_collection_link": "https://warped-comet-6692.postman.co/workspace/King-Salman-Park~14d7e373-9c45-4cea-befc-318f709c384b/collection/1732434-61cb0f37-7e50-48f6-af1f-1a5f02608bc7?action=share&source=collection_link&creator=1732434"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"token\", jsonData.response.data.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"user@order.com\",\r\n    \"password\" : \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"user@order.com\",\r\n    \"password\" : \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/v1/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 14 Oct 2024 21:53:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.1.25"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": \"OK\",\n        \"data\": {\n            \"name\": \"User\",\n            \"email\": \"user@order.com\",\n            \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vb3JkZXIubG9jYWwvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzI4OTQyODI4LCJleHAiOjE3Mjg5NDY0MjgsIm5iZiI6MTcyODk0MjgyOCwianRpIjoiVk5SYWRXRlZsQ3pYTU95MiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.I8Y7pQ_Daua6QW27LM9KuOKzZv4A9iWQldydkvLQK3E\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"token\", jsonData.response.data.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Mohamed\",\r\n    \"email\" : \"user@order.com\",\r\n    \"password\" : \"123456\",\r\n    \"password_confirmation\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Mohamed\",\r\n    \"email\" : \"mohamedelserag48@hotmail.com\",\r\n    \"password\" : \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/v1/register",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 14 Oct 2024 21:54:34 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.1.25"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": \"OK\",\n        \"data\": {\n            \"name\": \"Mohamed\",\n            \"email\": \"mohamedelserag48@hotmail.com\",\n            \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vb3JkZXIubG9jYWwvYXBpL3YxL3JlZ2lzdGVyIiwiaWF0IjoxNzI4OTQyODc0LCJleHAiOjE3Mjg5NDY0NzQsIm5iZiI6MTcyODk0Mjg3NCwianRpIjoiQml3RDJydnhPQkt4bVNDciIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ybADzu6MAhp8h1hhBHqajrx3v5wCaAzHxHM-jI5Aycs\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "All Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"keyword\":\"accusant\",\r\n    \"page\": 1,\r\n    \"per_page\":20,\r\n    \"sort_key\":\"created_at\",\r\n    \"sort_type\":\"DESC\",\r\n    \"range_key\":\"price\",\r\n    \"range_values\":[30, 40]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/products",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"products"
+							],
+							"query": [
+								{
+									"key": "stastus",
+									"value": "Pending",
+									"disabled": true
+								},
+								{
+									"key": "date",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All Products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"keyword\":\"accusant\",\r\n    \"page\": 1,\r\n    \"per_page\":20,\r\n    \"sort_key\":\"created_at\",\r\n    \"sort_type\":\"DESC\",\r\n    \"range_key\":\"price\",\r\n    \"range_values\":[30, 40]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/v1/products",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "stastus",
+											"value": "Pending",
+											"disabled": true
+										},
+										{
+											"key": "date",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 23 Oct 2024 18:20:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.1.25"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": \"OK\",\n        \"data\": [\n            {\n                \"id\": 1,\n                \"name\": \"accusantium\",\n                \"price\": 39.16,\n                \"image\": \"https://via.placeholder.com/640x480.png/00bbcc?text=accusantium\"\n            }\n        ],\n        \"links\": {\n            \"first_page_url\": \"http://order.local/api/v1/products?page=1\",\n            \"last_page_url\": \"http://order.local/api/v1/products?page=1\",\n            \"next_page_url\": null,\n            \"prev_page_url\": null\n        },\n        \"meta\": {\n            \"path\": \"http://order.local/api/v1/products\",\n            \"current_page\": 1,\n            \"from\": 1,\n            \"per_page\": 20,\n            \"to\": 1,\n            \"total\": 1,\n            \"pages\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Item name\",\r\n    \"price\": 40.5,\r\n    \"image\":\"https://picsum.photos/200/300\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/products",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Item name\",\r\n    \"price\": 40.5,\r\n    \"image\":\"https://picsum.photos/200/300\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/v1/products",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 23 Oct 2024 18:23:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.1.25"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": \"OK\",\n        \"data\": {\n            \"id\": 51,\n            \"name\": \"Item name\",\n            \"price\": 40.5,\n            \"image\": \"https://picsum.photos/200/300\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Item name Edit\",\r\n    \"price\": 48.5,\r\n    \"image\":\"https://picsum.photos/200/300\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/products/51",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"products",
+								"51"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Product",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Item name Edit\",\r\n    \"price\": 48.5,\r\n    \"image\":\"https://picsum.photos/200/300\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/v1/products/51",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"products",
+										"51"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 23 Oct 2024 18:24:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.1.25"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": \"OK\",\n        \"message\": \"Product updated successfully\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "All orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"Pending\",\r\n    \"date\":\"2024-10-23\",\r\n    \"page\": 1,\r\n    \"per_page\":20,\r\n    \"sort_key\":\"created_at\",\r\n    \"sort_type\":\"DESC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/orders",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "stastus",
+									"value": "Pending",
+									"disabled": true
+								},
+								{
+									"key": "date",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All orders",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\":\"Pending\",\r\n    \"date\":\"2024-10-23\",\r\n    \"page\": 1,\r\n    \"per_page\":20,\r\n    \"sort_key\":\"created_at\",\r\n    \"sort_type\":\"DESC\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/v1/orders",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "stastus",
+											"value": "Pending",
+											"disabled": true
+										},
+										{
+											"key": "date",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 23 Oct 2024 19:01:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.1.25"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": \"OK\",\n        \"data\": [\n            {\n                \"id\": 1,\n                \"total\": \"1114.58\",\n                \"status\": \"Pending\",\n                \"date\": \"23 Oct,2024 18:58\",\n                \"items\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"sint\",\n                        \"price\": 97.52,\n                        \"image\": \"https://via.placeholder.com/640x480.png/00eedd?text=consectetur\",\n                        \"quantity\": 84,\n                        \"created_at\": \"2024-10-23T18:47:54.000000Z\",\n                        \"updated_at\": \"2024-10-23T18:58:45.000000Z\",\n                        \"pivot\": {\n                            \"order_id\": 1,\n                            \"product_id\": 1,\n                            \"quantity\": 9,\n                            \"unit_price\": 97.52\n                        }\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"laborum\",\n                        \"price\": 33.58,\n                        \"image\": \"https://via.placeholder.com/640x480.png/004466?text=sit\",\n                        \"quantity\": 20,\n                        \"created_at\": \"2024-10-23T18:47:54.000000Z\",\n                        \"updated_at\": \"2024-10-23T18:58:45.000000Z\",\n                        \"pivot\": {\n                            \"order_id\": 1,\n                            \"product_id\": 2,\n                            \"quantity\": 3,\n                            \"unit_price\": 33.58\n                        }\n                    },\n                    {\n                        \"id\": 3,\n                        \"name\": \"nemo\",\n                        \"price\": 68.08,\n                        \"image\": \"https://via.placeholder.com/640x480.png/00eedd?text=maiores\",\n                        \"quantity\": 11,\n                        \"created_at\": \"2024-10-23T18:47:54.000000Z\",\n                        \"updated_at\": \"2024-10-23T18:58:45.000000Z\",\n                        \"pivot\": {\n                            \"order_id\": 1,\n                            \"product_id\": 3,\n                            \"quantity\": 2,\n                            \"unit_price\": 68.08\n                        }\n                    }\n                ]\n            }\n        ],\n        \"links\": {\n            \"first_page_url\": \"http://order.local/api/v1/orders?page=1\",\n            \"last_page_url\": \"http://order.local/api/v1/orders?page=1\",\n            \"next_page_url\": null,\n            \"prev_page_url\": null\n        },\n        \"meta\": {\n            \"path\": \"http://order.local/api/v1/orders\",\n            \"current_page\": 1,\n            \"from\": 1,\n            \"per_page\": 20,\n            \"to\": 1,\n            \"total\": 1,\n            \"pages\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\":[\r\n        {\"product_id\": 1, \"quantity\":9},\r\n        {\"product_id\": 2, \"quantity\":3},\r\n        {\"product_id\": 3, \"quantity\":2}\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/orders",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Order",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"items\":[\r\n        {\"product_id\": 1, \"quantity\":9},\r\n        {\"product_id\": 2, \"quantity\":3},\r\n        {\"product_id\": 3, \"quantity\":2}\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/v1/orders",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 23 Oct 2024 18:58:45 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.1.25"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"status\": \"OK\",\n        \"data\": {\n            \"id\": 1,\n            \"total\": 1114.58,\n            \"status\": \"Pending\",\n            \"date\": \"23 Oct,2024 18:58\",\n            \"items\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"sint\",\n                    \"price\": 97.52,\n                    \"image\": \"https://via.placeholder.com/640x480.png/00eedd?text=consectetur\",\n                    \"quantity\": 84,\n                    \"created_at\": \"2024-10-23T18:47:54.000000Z\",\n                    \"updated_at\": \"2024-10-23T18:58:45.000000Z\",\n                    \"pivot\": {\n                        \"order_id\": 1,\n                        \"product_id\": 1,\n                        \"quantity\": 9,\n                        \"unit_price\": 97.52\n                    }\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"laborum\",\n                    \"price\": 33.58,\n                    \"image\": \"https://via.placeholder.com/640x480.png/004466?text=sit\",\n                    \"quantity\": 20,\n                    \"created_at\": \"2024-10-23T18:47:54.000000Z\",\n                    \"updated_at\": \"2024-10-23T18:58:45.000000Z\",\n                    \"pivot\": {\n                        \"order_id\": 1,\n                        \"product_id\": 2,\n                        \"quantity\": 3,\n                        \"unit_price\": 33.58\n                    }\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"nemo\",\n                    \"price\": 68.08,\n                    \"image\": \"https://via.placeholder.com/640x480.png/00eedd?text=maiores\",\n                    \"quantity\": 11,\n                    \"created_at\": \"2024-10-23T18:47:54.000000Z\",\n                    \"updated_at\": \"2024-10-23T18:58:45.000000Z\",\n                    \"pivot\": {\n                        \"order_id\": 1,\n                        \"product_id\": 3,\n                        \"quantity\": 2,\n                        \"unit_price\": 68.08\n                    }\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/orders/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Order",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/v1/orders/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"orders",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 23 Oct 2024 19:02:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.1.25"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"total\": \"1114.58\",\n        \"status\": \"Pending\",\n        \"date\": \"23 Oct,2024 18:58\",\n        \"items\": [\n            {\n                \"id\": 1,\n                \"name\": \"sint\",\n                \"price\": 97.52,\n                \"image\": \"https://via.placeholder.com/640x480.png/00eedd?text=consectetur\",\n                \"quantity\": 84,\n                \"created_at\": \"2024-10-23T18:47:54.000000Z\",\n                \"updated_at\": \"2024-10-23T18:58:45.000000Z\",\n                \"pivot\": {\n                    \"order_id\": 1,\n                    \"product_id\": 1,\n                    \"quantity\": 9,\n                    \"unit_price\": 97.52\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"laborum\",\n                \"price\": 33.58,\n                \"image\": \"https://via.placeholder.com/640x480.png/004466?text=sit\",\n                \"quantity\": 20,\n                \"created_at\": \"2024-10-23T18:47:54.000000Z\",\n                \"updated_at\": \"2024-10-23T18:58:45.000000Z\",\n                \"pivot\": {\n                    \"order_id\": 1,\n                    \"product_id\": 2,\n                    \"quantity\": 3,\n                    \"unit_price\": 33.58\n                }\n            },\n            {\n                \"id\": 3,\n                \"name\": \"nemo\",\n                \"price\": 68.08,\n                \"image\": \"https://via.placeholder.com/640x480.png/00eedd?text=maiores\",\n                \"quantity\": 11,\n                \"created_at\": \"2024-10-23T18:47:54.000000Z\",\n                \"updated_at\": \"2024-10-23T18:58:45.000000Z\",\n                \"pivot\": {\n                    \"order_id\": 1,\n                    \"product_id\": 3,\n                    \"quantity\": 2,\n                    \"unit_price\": 68.08\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

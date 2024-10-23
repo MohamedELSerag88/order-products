@@ -15,8 +15,8 @@ This project is a Laravel-based RESTful API designed to manage order system , pa
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/MohamedELSerag88/order-system.git
-    cd order-system
+    git clone https://github.com/MohamedELSerag88/order-products.git
+    cd order-products
     ```
 
 2. **Install dependencies:**
